@@ -7,6 +7,15 @@ using GameUtils.GameInputs;
 
 public class Player : Character3D
 {
+
+    [SerializeField]
+    GameObject srcSkillShot;
+
+    [SerializeField]
+    Transform skillShotPoint;
+
+    IEnumerator createSkillShot;
+
     private void Start()
     {
         GameManager.instance.Player = this;
@@ -18,8 +27,20 @@ public class Player : Character3D
 
         if (GameInputs.AttackButton)
         {
+            createSkillShot = SkillShotCorutine();
             anim.SetTrigger("attack");
         }
+    }
+
+    public void CreateSkillShot()
+    {
+        StartCoroutine(createSkillShot);
+    }
+
+    IEnumerator SkillShotCorutine()
+    {
+        yield return new WaitForSeconds(0.10f);
+        Instantiate(srcSkillShot, skillShotPoint.position, transform.rotation);
     }
 
     protected override void Movement()

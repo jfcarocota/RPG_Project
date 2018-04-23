@@ -7,6 +7,7 @@ public class Attack : StateMachineBehaviour {
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         GameManager.instance.Player.MultiplierSpeed = 0f;
+        GameManager.instance.Player.CreateSkillShot();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
