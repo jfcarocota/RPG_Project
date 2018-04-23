@@ -16,6 +16,21 @@ public class Player : Character3D
 
     IEnumerator createSkillShot;
 
+    bool attacking = false;
+
+    public bool Attacking
+    {
+        get
+        {
+            return attacking;
+        }
+
+        set
+        {
+            attacking = value;
+        }
+    }
+
     private void Start()
     {
         GameManager.instance.Player = this;
@@ -25,7 +40,7 @@ public class Player : Character3D
     {
         base.Attack();
 
-        if (GameInputs.AttackButton)
+        if (GameInputs.AttackButton && !attacking)
         {
             createSkillShot = SkillShotCorutine();
             anim.SetTrigger("attack");
@@ -50,7 +65,7 @@ public class Player : Character3D
 
         transform.Translate(Vector3.forward * GameInputs.Axis.magnitude * speed * Time.deltaTime * multiplierSpeed);
 
-        if (GameInputs.Axis != Vector2.zero)
+        if (GameInputs.Axis != Vector2.zero && !attacking)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(GameInputs.Axis.x, 0f, GameInputs.Axis.y));
         }

@@ -34,5 +34,10 @@ public class SkillShot : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         orbHit.SetActive(other.CompareTag("hit"));
+        if (orbHit.activeSelf)
+        {
+            ParticleSystem ps = orbHit.GetComponent<ParticleSystem>();
+            Destroy(gameObject, ps.startLifetime);
+        }
     }
 }
