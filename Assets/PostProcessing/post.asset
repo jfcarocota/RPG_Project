@@ -122,9 +122,9 @@ MonoBehaviour:
       basic:
         postExposure: 0.6
         temperature: 43.1
-        tint: -23
+        tint: -0.9
         hueShift: 0
-        saturation: 1.4
+        saturation: 2
         contrast: 1
       channelMixer:
         red: {x: 0.85, y: 0.31, z: 0.12}
@@ -298,7 +298,7 @@ MonoBehaviour:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.4
+      intensity: 0.453
       smoothness: 0.2
       roundness: 1
       mask: {fileID: 0}

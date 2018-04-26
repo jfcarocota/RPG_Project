@@ -6,19 +6,45 @@ namespace GameUtils
 {
     namespace AudioController
     {
+        [RequireComponent(typeof(AudioSource))]
+
+        [System.Serializable]
         public class AudioController
         {
-            public static string AudioName(int index)
-            {
-                return "audio name";
-            }
-        }
+            [SerializeField]
+            List<AudioClip> audios;
 
-        public class AudioMixSuperCoolXDjajaSaludos
-        {
-            public static string Insultar
+            [SerializeField]
+            AudioSource aud;
+
+            public AudioSource Aud
             {
-                get { return "y mis huevotes"; }
+                get
+                {
+                    return aud;
+                }
+
+                set
+                {
+                    aud = value;
+                }
+            }
+
+            public void PlayClip(int index)
+            {
+                aud.clip = audios[index];
+                aud.Play();
+            }
+
+            public void StopClip()
+            {
+                aud.Stop();
+                aud.clip = null;
+            }
+
+            public bool Playing
+            {
+                get { return aud.isPlaying; }
             }
         }
     }

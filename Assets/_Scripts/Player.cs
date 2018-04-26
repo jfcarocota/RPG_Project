@@ -9,6 +9,9 @@ public class Player : Character3D
 {
 
     [SerializeField]
+    AudioController audioController;
+
+    [SerializeField]
     GameObject srcSkillShot;
 
     [SerializeField]
@@ -17,6 +20,12 @@ public class Player : Character3D
     IEnumerator createSkillShot;
 
     bool attacking = false;
+
+    new void Awake()
+    {
+        base.Awake();
+        audioController.Aud = GetComponent<AudioSource>();
+    }
 
     public bool Attacking
     {
@@ -28,6 +37,14 @@ public class Player : Character3D
         set
         {
             attacking = value;
+        }
+    }
+
+    public AudioController AudController
+    {
+        get
+        {
+            return audioController;
         }
     }
 
@@ -72,5 +89,13 @@ public class Player : Character3D
 
         //Debug.Log(AudioController.AudioName(1));
         //Debug.Log(AudioMixSuperCoolXDjajaSaludos.Insultar);
+    }
+
+    public void WalkingSFX()
+    {
+        if (!audioController.Playing)
+        {
+            audioController.PlayClip(0);
+        }
     }
 }

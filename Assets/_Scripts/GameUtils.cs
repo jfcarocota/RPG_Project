@@ -47,7 +47,7 @@ namespace GameUtils
                 }
             }
 
-            private void Awake()
+            public void Awake()
             {
                 anim = GetComponent<Animator>();
             }
