@@ -8,7 +8,7 @@
 		_NormalAmount("Normal Amount", Range(-1.0, 3.0)) = 1.0
 		_RampTex("Ramp Texture", 2D) = "white"{}
 		_OutlineColor("Outline Color", Color) = (1, 1, 1, 1)
-		_Outline("Outline", Range(0.002, 0.1)) = 0.003
+		_Outline("Outline", Range(0.002, 0.5)) = 0.003
 		_RimColor("Rim Color", Color) = (0, 0.5, 0.5, 0.0)
 		_RimPower("Rim Power", Range(0.5, 8.0)) = 3.0
 		_Exposure("Exposure", Range(0.0, 10.0)) = 1.0

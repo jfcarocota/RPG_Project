@@ -32,13 +32,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
-    - _Exposure: 0
+    - _Exposure: 0.41
     - _NormalAmount: 1
-    - _Outline: 0.0298
+    - _Outline: 0.238
     - _RimPower: 3
     - _Specular: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _OccludeColor: {r: 0, g: 0.91724133, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.10856999, g: 0.125, b: 0.050551474, a: 0}
+    - _RimColor: {r: 0.4705882, g: 0.35971838, b: 0.121107265, a: 0}
