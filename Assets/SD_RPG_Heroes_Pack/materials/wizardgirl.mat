@@ -35,10 +35,10 @@ Material:
     - _Exposure: 0.41
     - _NormalAmount: 1
     - _Outline: 0.238
-    - _RimPower: 3
+    - _RimPower: 3.77
     - _Specular: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _OccludeColor: {r: 0, g: 0.91724133, b: 1, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.4705882, g: 0.35971838, b: 0.121107265, a: 0}
+    - _RimColor: {r: 0.4852941, g: 0.36756352, b: 0.11418684, a: 0}

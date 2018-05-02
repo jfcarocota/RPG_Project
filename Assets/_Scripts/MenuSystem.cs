@@ -7,7 +7,6 @@ using System.Linq;
 
 namespace GameUtils
 {
-
     namespace MenusSystem
     {
         public class MenuSystem : MonoBehaviour

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Player player;
 
+    GameData gameData;
+
     public Player Player
     {
         get
@@ -19,6 +21,19 @@ public class GameManager : MonoBehaviour
         set
         {
             player = value;
+        }
+    }
+
+    public GameData GameData
+    {
+        get
+        {
+            return gameData;
+        }
+
+        set
+        {
+            gameData = value;
         }
     }
 
