@@ -4,7 +4,8 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		//_BumpMap("Normal Map", 2D) = "bump"{}
+		_NormalTex("Normal Tex", 2D) = "bump"{}
+		_NormalAmount("Normal Amount", Range(-1.0, 3.0)) = 1.0
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -18,11 +19,12 @@
 		#pragma target 3.0
 
 		sampler2D _MainTex;
-		sampler2D _BumpMap;
+		sampler2D _NormalTex;
+		float _NormalAmount;
 		
 		struct Input {
 			float2 uv_MainTex;
-			float uv_BumpMap;
+			float2 uv_NormalTex;
 		};
 
 		half _Glossiness;
@@ -40,8 +42,9 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 			o.Albedo = c.rgb;
-			//o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
-			// Metallic and smoothness come from slider variables
+			o.Normal = UnpackNormal(tex2D(_NormalTex, IN.uv_NormalTex));
+			o.Normal *= float3(_NormalAmount, _NormalAmount, 1);
+			//Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;

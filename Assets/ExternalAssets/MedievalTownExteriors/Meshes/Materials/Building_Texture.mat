@@ -74,7 +74,7 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0.312
     - _Mode: 1
-    - _NormalAmount: 1
+    - _NormalAmount: 1.87
     - _OcclusionStrength: 1
     - _Outline: 0.0656
     - _Parallax: 0.02

@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6afc5812a728aa94db7cbd3811bcf068
+timeCreated: 1525228145
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Megaten 20XX
+  fontNames:
+  - Megaten 20XX
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
