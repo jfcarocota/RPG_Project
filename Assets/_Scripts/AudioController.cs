@@ -30,6 +30,11 @@ namespace GameUtils
                 }
             }
 
+            public void PlayClipOnce(int index)
+            {
+                aud.PlayOneShot(audios[index]);
+            }
+
             public void PlayClip(int index)
             {
                 aud.clip = audios[index];

@@ -23,14 +23,27 @@ namespace GameUtils
 
             }
 
-            public static void LoadGame()
+            public static GameData LoadGame()
             {
-
+                if (FileExist)
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    FileStream file = File.Open(Application.persistentDataPath + "/rpggame.data", FileMode.Open);
+                    GameData gd = (GameData)bf.Deserialize(file);
+                    file.Close();
+                    return gd;
+                }
+                return null;
             }
 
             public static void PopulateDataBlocks()
             {
+                
+            }
 
+            public static bool FileExist
+            {
+                get { return File.Exists(Application.persistentDataPath + "/rpggame.data"); }
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameUtils.DataSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,21 @@ public class GameManager : MonoBehaviour
         {
             player = value;
         }
+    }
+
+    public void SaveGame()
+    {
+        DataSystem.SaveData(gameData);
+    }
+
+    public void LoadGame()
+    {
+        gameData = DataSystem.LoadGame();
+    }
+
+    public bool ExistData
+    {
+        get { return DataSystem.FileExist; }
     }
 
     public GameData GameData

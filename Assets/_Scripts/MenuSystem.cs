@@ -40,8 +40,12 @@ namespace GameUtils
                 for (int i = 0; i < optionsParent.childCount; i++)
                 {
                     Button button = optionsParent.GetChild(i).GetComponent<Button>();
-                    buttons.Add(button);
+                    if (button.gameObject.activeSelf)
+                    {
+                        buttons.Add(button);
+                    }
                 }
+
 
                 Button first = buttons[0];
                 Button last = buttons.Last<Button>();

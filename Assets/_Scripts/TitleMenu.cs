@@ -4,6 +4,7 @@ using UnityEngine;
 using GameUtils.MenusSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using GameUtils.AudioController;
 
 public class TitleMenu : MenuSystem {
 
@@ -15,18 +16,36 @@ public class TitleMenu : MenuSystem {
     [SerializeField]
     Button noOption;
 
+    [SerializeField]
+    GameObject continueButton;
+
     IEnumerator fadeNload;
+
+    [SerializeField]
+    AudioController ac;
 
     new void Start()
     {
+        continueButton.SetActive(GameManager.instance.ExistData);
         fadeNload = FadeNload(0);
         base.Start();
     }
 
     public void NewGame()
     {
-        warningPanel.SetActive(true);
-        noOption.Select();
+        if (GameManager.instance.ExistData)
+        {
+            warningPanel.SetActive(true);
+            noOption.Select();
+        }
+        else
+        {
+            ac.PlayClipOnce(0);
+            GameManager.instance.GameData = new GameData(1, 0, 0, 10, 4, 3);
+            GameManager.instance.SaveGame();
+            FadeOut();
+            StartCoroutine(fadeNload);
+        }
     }
 
     public void CancelNewGame()
@@ -34,6 +53,15 @@ public class TitleMenu : MenuSystem {
         warningPanel.SetActive(false);
         newGameButton.Select();
 
+    }
+
+    public void AcceptNewGame()
+    {
+        warningPanel.SetActive(false);
+        GameManager.instance.GameData = new GameData(1, 0, 0, 10, 4, 3);
+        GameManager.instance.SaveGame();
+        FadeOut();
+        StartCoroutine(fadeNload);
     }
 
     public void Continue()
@@ -49,6 +77,7 @@ public class TitleMenu : MenuSystem {
         {
             yield return new WaitForSeconds(delay);
         }
+        GameManager.instance.LoadGame();
         SceneManager.LoadScene(1);
     }
 

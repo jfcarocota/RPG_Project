@@ -4,7 +4,6 @@ using UnityEngine;
 using GameUtils.Character3D;
 using GameUtils.AudioController;
 using GameUtils.GameInputs;
-using GameUtils.DataSystem;
 
 public class Player : Character3D
 {
@@ -52,8 +51,7 @@ public class Player : Character3D
     private void Start()
     {
         GameManager.instance.Player = this;
-        AlterStats();
-        DataSystem.SaveData(GameManager.instance.GameData);
+        GameManager.instance.SaveGame();
     }
 
     protected override void Attack()
@@ -100,10 +98,5 @@ public class Player : Character3D
         {
             audioController.PlayClip(0);
         }
-    }
-
-    public void AlterStats()
-    {
-        GameManager.instance.GameData = new GameData(1, 0, 0, 10, 4, 3);
     }
 }

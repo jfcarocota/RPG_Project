@@ -27,5 +27,81 @@ public class GameData
         this.magicPower = magicPower;
     }
 
+    public int Level
+    {
+        get
+        {
+            return level;
+        }
 
+        set
+        {
+            level = value;
+        }
+    }
+
+    public int MagicPower
+    {
+        get
+        {
+            return magicPower;
+        }
+
+        set
+        {
+            magicPower = value;
+        }
+    }
+
+    public int Mana
+    {
+        get
+        {
+            return mana;
+        }
+
+        set
+        {
+            mana = value;
+        }
+    }
+
+    public int AttackPower
+    {
+        get
+        {
+            return attackPower;
+        }
+
+        set
+        {
+            attackPower = value;
+        }
+    }
+
+    public int Deffense
+    {
+        get
+        {
+            return deffense;
+        }
+
+        set
+        {
+            deffense = value;
+        }
+    }
+
+    public int MagicDeffense
+    {
+        get
+        {
+            return magicDeffense;
+        }
+
+        set
+        {
+            magicDeffense = value;
+        }
+    }
 }
