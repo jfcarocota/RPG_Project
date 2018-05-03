@@ -46,7 +46,6 @@ namespace GameUtils
                     }
                 }
 
-
                 Button first = buttons[0];
                 Button last = buttons.Last<Button>();
                 Navigation btnFisrtNav = first.navigation;

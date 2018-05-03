@@ -7,7 +7,6 @@ using GameUtils.GameInputs;
 
 public class Player : Character3D
 {
-
     [SerializeField]
     AudioController audioController;
 
