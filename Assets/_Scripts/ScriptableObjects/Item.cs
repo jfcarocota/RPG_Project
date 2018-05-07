@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 namespace GameUtils
@@ -9,9 +8,9 @@ namespace GameUtils
         public abstract class Item : ScriptableObject
         {
             [SerializeField]
-            private string itemName;
+            protected string itemName;
             [SerializeField]
-            private Sprite itemSprite;
+            protected Sprite itemSprite;
             [SerializeField]
             protected string description;
             [SerializeField]

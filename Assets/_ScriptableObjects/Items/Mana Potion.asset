@@ -8,6 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d576781a89eb34da5b655cb8ef9670, type: 3}
-  m_Name: SlimeGreen
+  m_Script: {fileID: 11500000, guid: 7a076feca39444a42ad06a8d379c612e, type: 3}
+  m_Name: Mana Potion
   m_EditorClassIdentifier: 
+  itemName: 
+  itemSprite: {fileID: 0}
+  description: 
+  saleValue: 0
+  effectValue: 0

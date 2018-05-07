@@ -1,24 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GameUtils.ItemSystem;
 
-[CreateAssetMenu(fileName = "Health Potion", menuName = "Potions/ Health", order = 1)]
-public class HealthPotion : Item
+[CreateAssetMenu(fileName = "Health Potion", menuName = "Potion/Health")]
+public class HealthPotion : Potion
 {
-    [SerializeField]
-    int recoverValue;
-
-    public int RecoverValue
+    protected override void Drink(Hero h)
     {
-        get
-        {
-            return recoverValue;
-        }
-
-        set
-        {
-            recoverValue = value;
-        }
+        h.Health = ((effectValue + h.Health) <= h.MaxHealth) ? effectValue + h.Health : h.MaxHealth;
+        Destroy(this);
     }
 }

@@ -16,8 +16,25 @@ public class GameData
     int deffense;
     [SerializeField]
     int magicDeffense;
+    [SerializeField]
+    int health;
+    [SerializeField]
+    float posX;
+    [SerializeField]
+    float posY;
+    [SerializeField]
+    float currentExperience;
+    [SerializeField]
+    float experienceToNextLevel;
+    [SerializeField]
+    int maxHealth;
+    [SerializeField]
+    int maxMana;
 
-    public GameData(int level, int magicPower, int mana, int attackPower, int deffense, int magicDeffense)
+
+    public GameData(int level, int magicPower, int mana, int attackPower, int deffense, 
+        int magicDeffense, int health, float posX, float posY, float currentExperience, 
+        float experienceToNextLevel, int maxHealth, int maxMana)
     {
         this.level = level;
         this.magicPower = magicPower;
@@ -25,6 +42,13 @@ public class GameData
         this.attackPower = attackPower;
         this.deffense = deffense;
         this.magicPower = magicPower;
+        this.health = health;
+        this.posX = posX;
+        this.posY = posY;
+        this.currentExperience = currentExperience;
+        this.experienceToNextLevel = experienceToNextLevel;
+        this.maxMana = maxMana;
+        this.maxHealth = maxHealth;
     }
 
     public int Level
@@ -102,6 +126,97 @@ public class GameData
         set
         {
             magicDeffense = value;
+        }
+    }
+
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
+            health = value;
+        }
+    }
+
+    public float CurrentExperience
+    {
+        get
+        {
+            return currentExperience;
+        }
+
+        set
+        {
+            currentExperience = value;
+        }
+    }
+
+    public float ExperienceToNextLevel
+    {
+        get
+        {
+            return experienceToNextLevel;
+        }
+
+        set
+        {
+            experienceToNextLevel = value;
+        }
+    }
+
+    public int MaxHealth
+    {
+        get
+        {
+            return maxHealth;
+        }
+
+        set
+        {
+            maxHealth = value;
+        }
+    }
+
+    public int MaxMana
+    {
+        get
+        {
+            return maxMana;
+        }
+
+        set
+        {
+            maxMana = value;
+        }
+    }
+
+    public float PosX
+    {
+        get
+        {
+            return posX;
+        }
+
+        set
+        {
+            posX = value;
+        }
+    }
+
+    public float PosY
+    {
+        get
+        {
+            return posY;
+        }
+
+        set
+        {
+            posY = value;
         }
     }
 }
