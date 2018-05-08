@@ -18,6 +18,9 @@ public class Player : Character3D
 
     IEnumerator createSkillShot;
 
+    [SerializeField]
+    Hero heroStats;
+
     bool attacking = false;
 
     new void Awake()
@@ -44,6 +47,19 @@ public class Player : Character3D
         get
         {
             return audioController;
+        }
+    }
+
+    public Hero HeroStats
+    {
+        get
+        {
+            return heroStats;
+        }
+
+        set
+        {
+            heroStats = value;
         }
     }
 
@@ -96,6 +112,15 @@ public class Player : Character3D
         if (!audioController.Playing)
         {
             audioController.PlayClip(0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Health"))
+        {
+            Food food = other.GetComponent<Food>();
+            food.Potion.Drink(heroStats);
         }
     }
 }

@@ -11,17 +11,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f696b71694fdd549852a7038b9dced2, type: 3}
   m_Name: Hero
   m_EditorClassIdentifier: 
-  characterName: 
-  health: 0
-  defense: 0
-  magicDefense: 0
-  magicPower: 0
-  attackPower: 0
-  level: 0
-  maxHealth: 0
-  maxMana: 0
-  position: {x: 0, y: 0, z: 0}
-  currentExperience: 0
-  experienceToNextLevel: 0
-  lore: 
-  heroSprite: {fileID: 0}
+  characterName: Pancho
+  health: 30
+  defense: 20
+  magicDefense: 10
+  magicPower: 5
+  attackPower: 15
+  level: 13
+  maxHealth: 40
+  maxMana: 10
+  mana: 10
+  position: {x: 5, y: 0, z: 5}
+  currentExperience: 300
+  experienceToNextLevel: 400
+  lore: Adoptado
+  heroSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
