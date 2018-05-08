@@ -15,6 +15,23 @@ public class Hero : CharacterStats
     [SerializeField]
     Sprite heroSprite;
 
+    public void InitData(GameData gd)
+    {
+        level = gd.Level;
+        magicPower = gd.MagicPower;
+        mana = gd.Mana;
+        attackPower = gd.AttackPower;
+        defense = gd.Deffense;
+        magicPower = gd.MagicPower;
+        health = gd.Health;
+        position.x = gd.PosX;
+        position.y = gd.PosY;
+        currentExperience = gd.CurrentExperience;
+        experienceToNextLevel = gd.ExperienceToNextLevel;
+        maxMana = gd.MaxMana;
+        maxHealth = gd.MaxHealth;
+    }
+
     public Vector3 Position
     {
         get

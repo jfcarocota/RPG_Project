@@ -66,7 +66,7 @@ public class Player : Character3D
     private void Start()
     {
         GameManager.instance.Player = this;
-        GameManager.instance.SaveGame();
+        heroStats.InitData(GameManager.instance.GameData);
     }
 
     protected override void Attack()
@@ -102,9 +102,6 @@ public class Player : Character3D
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(GameInputs.Axis.x, 0f, GameInputs.Axis.y));
         }
-
-        //Debug.Log(AudioController.AudioName(1));
-        //Debug.Log(AudioMixSuperCoolXDjajaSaludos.Insultar);
     }
 
     public void WalkingSFX()
@@ -121,6 +118,8 @@ public class Player : Character3D
         {
             Food food = other.GetComponent<Food>();
             food.Potion.Drink(heroStats);
+            GameManager.instance.GameData.Health = heroStats.Health;
+            GameManager.instance.SaveGame();
         }
     }
 }

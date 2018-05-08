@@ -24,6 +24,9 @@ public class TitleMenu : MenuSystem {
     [SerializeField]
     AudioController ac;
 
+    [SerializeField]
+    Hero newHero;
+
     new void Start()
     {
         continueButton.SetActive(GameManager.instance.ExistData);
@@ -41,7 +44,7 @@ public class TitleMenu : MenuSystem {
         else
         {
             ac.PlayClipOnce(0);
-            GameManager.instance.GameData = new GameData(1, 0, 5, 10, 4, 3, 10, 0f, 0f, 0f, 2, 10, 5);
+            GameManager.instance.GameData = new GameData(newHero);
             GameManager.instance.SaveGame();
             FadeOut();
             StartCoroutine(fadeNload);
@@ -58,7 +61,7 @@ public class TitleMenu : MenuSystem {
     public void AcceptNewGame()
     {
         warningPanel.SetActive(false);
-        GameManager.instance.GameData = new GameData(1, 0, 5, 10, 4, 3, 10, 0f, 0f, 0f, 2, 10, 5);
+        GameManager.instance.GameData = new GameData(newHero);
         GameManager.instance.SaveGame();
         FadeOut();
         StartCoroutine(fadeNload);

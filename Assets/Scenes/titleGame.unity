@@ -236,6 +236,7 @@ MonoBehaviour:
     audios:
     - {fileID: 8300000, guid: 2b0431ff86cac3544872a94b0d516c99, type: 3}
     aud: {fileID: 77927917}
+  newHero: {fileID: 11400000, guid: b06e8039bb4af14489d2e7b1c3e535d7, type: 2}
 --- !u!82 &77927917
 AudioSource:
   m_ObjectHideFlags: 0

@@ -51,6 +51,23 @@ public class GameData
         this.maxHealth = maxHealth;
     }
 
+    public GameData(Hero h)
+    {
+        this.level = h.Level;
+        this.magicPower = h.MagicPower;
+        this.mana = h.Mana;
+        this.attackPower = h.AttackPower;
+        this.deffense = h.Defense;
+        this.magicPower = h.MagicPower;
+        this.health = h.Health;
+        this.posX = h.Position.x;
+        this.posY = h.Position.z;
+        this.currentExperience = h.CurrentExperience;
+        this.experienceToNextLevel = h.ExperienceToNextLevel;
+        this.maxMana = h.MaxMana;
+        this.maxHealth = h.MaxHealth;
+    }
+
     public int Level
     {
         get

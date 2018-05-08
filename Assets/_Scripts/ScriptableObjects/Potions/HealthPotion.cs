@@ -8,6 +8,5 @@ public class HealthPotion : Potion
     public override void Drink(Hero h)
     {
         h.Health = ((effectValue + h.Health) <= h.MaxHealth) ? effectValue + h.Health : h.MaxHealth;
-        Destroy(this);
     }
 }
