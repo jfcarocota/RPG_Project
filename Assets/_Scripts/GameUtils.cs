@@ -17,6 +17,11 @@ namespace GameUtils
             {
                 get { return Input.GetButtonDown("Fire1"); }
             }
+
+            public static bool PauseButton
+            {
+                get { return Input.GetButtonDown("Pause"); }
+            }
         }
     }
 

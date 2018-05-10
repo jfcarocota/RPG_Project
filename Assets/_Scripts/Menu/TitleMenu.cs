@@ -81,6 +81,7 @@ public class TitleMenu : MenuSystem {
             yield return new WaitForSeconds(delay);
         }
         GameManager.instance.LoadGame();
+        ResetAlpha();
         SceneManager.LoadScene(1);
     }
 

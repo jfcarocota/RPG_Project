@@ -79,12 +79,18 @@ namespace GameUtils
                 
                 eventSystem.firstSelectedGameObject = buttons[0].gameObject;
                 buttons[0].Select();
+                ResetAlpha();
+            }
+
+            public void ResetAlpha()
+            {
+                cvr.SetAlpha(1f);
             }
 
             protected void FadeOut()
             {
-                cvr.SetAlpha(0f);
-                fadePanel.CrossFadeAlpha(255f, 1f, false);
+                //cvr.SetAlpha(0f);
+                fadePanel.CrossFadeAlpha(1, 0f, false);
             }
         }
     }

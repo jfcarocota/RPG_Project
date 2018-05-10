@@ -65,6 +65,7 @@ public class Player : Character3D
 
     private void Start()
     {
+        GameManager.instance.LoadGame();
         GameManager.instance.Player = this;
         heroStats.InitData(GameManager.instance.GameData);
     }

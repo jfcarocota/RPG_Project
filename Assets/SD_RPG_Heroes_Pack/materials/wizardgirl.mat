@@ -32,9 +32,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutoff: 0.5
-    - _Exposure: 0.41
+    - _Exposure: 0.15
     - _NormalAmount: 1
-    - _Outline: 0.238
+    - _Outline: 0.007
     - _RimPower: 3.77
     - _Specular: 0
     m_Colors:
