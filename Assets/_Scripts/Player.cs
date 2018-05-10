@@ -23,6 +23,9 @@ public class Player : Character3D
 
     bool attacking = false;
 
+    [SerializeField]
+    TextBox textBox;
+
     new void Awake()
     {
         base.Awake();
@@ -67,6 +70,7 @@ public class Player : Character3D
     {
         GameManager.instance.LoadGame();
         GameManager.instance.Player = this;
+        GameManager.instance.TextBox = textBox;
         heroStats.InitData(GameManager.instance.GameData);
     }
 

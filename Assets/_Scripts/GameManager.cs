@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Player player;
 
+    [SerializeField]
+    TextBox textBox;
+
     GameData gameData;
 
     public Player Player
@@ -50,6 +53,19 @@ public class GameManager : MonoBehaviour
         set
         {
             gameData = value;
+        }
+    }
+
+    public TextBox TextBox
+    {
+        get
+        {
+            return textBox;
+        }
+
+        set
+        {
+            textBox = value;
         }
     }
 
