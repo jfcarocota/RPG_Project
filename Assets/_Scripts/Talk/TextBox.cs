@@ -9,6 +9,10 @@ public class TextBox : MonoBehaviour
 
     [SerializeField]
     GameObject parentObj;
+    [SerializeField]
+    Image imageIcon;
+    [SerializeField]
+    Text displayName;
 
     private void Awake()
     {
@@ -32,6 +36,25 @@ public class TextBox : MonoBehaviour
         get
         {
             return parentObj;
+        }
+    }
+
+    public Sprite DisplayImage
+    {
+        get { return imageIcon.sprite; }
+        set { imageIcon.sprite = value; }
+    }
+
+    public string DisplayName
+    {
+        get
+        {
+            return displayName.text;
+        }
+
+        set
+        {
+            displayName.text = value;
         }
     }
 }

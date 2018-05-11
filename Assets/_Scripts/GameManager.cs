@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
 
         if (!instance)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             instance = this;
             DontDestroyOnLoad(gameObject);
         }else if (instance != this)
