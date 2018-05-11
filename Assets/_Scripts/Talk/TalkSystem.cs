@@ -2,77 +2,65 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GameUtils.GameInputs;
 
 
 [CreateAssetMenu(fileName = "Conversation", menuName = "Talk/Conversation", order = 0)]
 public class TalkSystem : ScriptableObject
 {
-[SerializeField]
-string displayName;
-[SerializeField]
-Sprite displayImage;
-[SerializeField]
-Font font;
-[SerializeField]
-List<FrameDialog> dialogues;
+    [SerializeField]
+    Font font;
+    [SerializeField]
+    List<FrameDialog> dialogues;
 
-public List<FrameDialog> Dialogues
-{
-    get
+    IEnumerator talking;
+
+    public List<FrameDialog> Dialogues
     {
-        return dialogues;
+        get
+        {
+            return dialogues;
+        }
+
+        set
+        {
+            dialogues = value;
+        }
     }
 
-    set
+    public Font Font
     {
-        dialogues = value;
-    }
-}
+        get
+        {
+            return font;
+        }
 
-public Font Font
-{
-    get
-    {
-        return font;
-    }
-
-    set
-    {
-        font = value;
-    }
-}
-
-public string DisplayName
-{
-    get
-    {
-        return displayName;
+        set
+        {
+            font = value;
+        }
     }
 
-    set
+    public IEnumerator Talking(float delay)
     {
-        displayName = value;
+        GameManager.instance.TextBox.ParentObj.SetActive(true);
+        GameManager.instance.TextBox.TextFont = font;
+        GameManager.instance.TextBox.Content = dialogues[0].Dialog;
+        int i = 0;
+        int last = dialogues.Count - 1;
+        while (i <= last)
+        {
+            if (GameInputs.AttackButton)
+            {
+                i++;
+                if (i <= last)
+                {
+                    GameManager.instance.TextBox.Content = dialogues[i].Dialog;
+                }
+            }
+            yield return new WaitForSeconds(delay);
+        }
+        GameManager.instance.TextBox.ParentObj.SetActive(false);
     }
-}
-
-public Sprite DisplayImage
-{
-    get
-    {
-        return displayImage;
-    }
-
-    set
-    {
-        displayImage = value;
-    }
-}
-
-public void Talk()
-{
-    GameManager.instance.TextBox.ParentObj.SetActive(true);
-    GameManager.instance.TextBox.TextFont = font;
-    GameManager.instance.TextBox.Content = dialogues[0].Dialog;
-}
 }
 

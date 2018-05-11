@@ -11,8 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8493aa1931a454d870f74ae2fe5c17, type: 3}
   m_Name: Talk01
   m_EditorClassIdentifier: 
-  displayName: 
-  displayImage: {fileID: 0}
   font: {fileID: 12800000, guid: 9cea8da4af5e87a479658c0049d2335b, type: 3}
   dialogues:
-  - {fileID: 11400000, guid: f0694e6b5e070ac49b75ea0f578f02c2, type: 2}
+  - displayName: NPC01
+    displayImage: {fileID: 21300000, guid: 33f467ded910da941b19570efc13d319, type: 3}
+    dialog: Hola.
+  - displayName: Wizard
+    displayImage: {fileID: 21300000, guid: e31c70634c4d9dc4f8df26fcdf65c1d6, type: 3}
+    dialog: Hola muchos gusto, soy <Color=#00ff00ff>Wizard</color>.

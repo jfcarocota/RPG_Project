@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            talkSystem.Talk();
+            StartCoroutine(talkSystem.Talking(0f));
         }
     }
 

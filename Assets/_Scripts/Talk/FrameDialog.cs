@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Frame Dialog", menuName = "Talk/Frame Dialog", order = 1)]
-public class FrameDialog : ScriptableObject
+//[CreateAssetMenu(fileName = "Frame Dialog", menuName = "Talk/Frame Dialog", order = 1), System.Serializable]
+[System.Serializable]
+public class FrameDialog 
 {
     [SerializeField]
     string displayName;
